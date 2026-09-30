@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Welcome Babi to your Gift</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Caveat:wght@500&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="fx"></canvas>
+<!-- Music file: Music/Music.mp3 -->
+<audio id="bgm" loop src="Music/Music.mp3"></audio>
+<div id="nav" hidden><span id="crumb"></span><button id="music">🎵 Music: OFF</button></div>
+
+<main>
+  <!-- PAGE 1: LOGIN -->
+  <section id="login" class="screen active">
+    <form id="loginForm" class="card" autocomplete="off">
+      <h1>Welcome Babi to your Gift </h1>
+      <p><em>Some memories are worth keeping forever.</em></p>
+      <input id="u" placeholder="Username" required>
+      <input id="p" type="password" placeholder="Password" required>
+      <button>Enter Our Story</button>
+      <div id="err"></div>
+      <small>Made with love ❤️</small>
+    </form>
+  </section>
+
+  <!-- PAGE 2: THE THREE DOORS -->
+  <section id="room" class="screen">
+    <h2>Which door will you open?</h2>
+    <div class="doors">
+      <div class="door" data-go="memories" style="--c1:#6b3f2a;--c2:#8a5a3c"><div class="frame"><div class="panel">📸</div></div><h3>Our Memories</h3><p><em>The moments that became memories.</em></p></div>
+      <div class="door" data-go="story" style="--c1:#7a2f3b;--c2:#a8434e"><div class="frame"><div class="panel">❤️</div></div><h3>Our Story</h3><p><em>From reconnecting to forever.</em></p></div>
+      <div class="door" data-go="letter" style="--c1:#4a3a34;--c2:#7a625a"><div class="frame"><div class="panel">💌</div></div><h3>A Letter For You</h3><p><em>Something I want you to know.</em></p></div>
+    </div>
+  </section>
+
+  <!-- DOOR 1: GALLERY -->
+  <section id="memories" class="screen">
+    <button class="back" data-go="room">← Back to the Room</button>
+    <h2>Our Memories</h2><p><em>Little moments, big memories.</em></p>
+    <div class="table" id="table"></div>
+  </section>
+
+  <!-- DOOR 2: STORY -->
+  <section id="story" class="screen">
+    <button class="back" data-go="room">← Back to the Room</button>
+    <h2>Our Story</h2>
+    <p>We've Been Together For</p>
+    <div class="count"><span id="days">0</span> DAYS</div>
+    <p>and counting... ❤️</p>
+    <p class="date" id="tDate"></p><p><em>The day our journey officially began.</em></p>
+    <h3 class="before">But our story started before that...</h3>
+    <p class="date" id="rDate"></p><p><em>The day we reconnected.</em></p><p id="rNote" class="note"></p>
+    <p>It's been</p>
+    <div class="count"><span id="rDays">0</span> DAYS</div>
+    <p>since we found our way back to each other. ❤️</p>
+    <ul class="tl" id="tl"></ul>
+  </section>
+
+  <!-- DOOR 3: LETTER -->
+  <section id="letter" class="screen">
+    <button class="back" data-go="room">← Back to the Room</button>
+    <h2>A Letter For You</h2>
+    <div id="envWrap"><p><em>You have a letter...</em></p>
+      <div class="env" id="env"><div class="flap"></div><span class="seal">❤️</span></div>
+      <button id="openBtn">Open It 💌</button></div>
+    <div id="paperWrap" hidden>
+      <div class="paper" id="paper"></div>
+      <div class="pager"><button id="prev">← Previous</button><span id="pg"></span><button id="next">Next →</button></div>
+    </div>
+  </section>
+</main>
+
+<div id="lb"><button id="lbX">✕</button><div id="lbImg"></div><h3 id="lbT"></h3><p id="lbP"></p>
+  <div><button id="lbPrev">← Previous</button> <button id="lbNext">Next →</button></div></div>
+<script src="script.js?v=5"></script>
+</body>
+</html>
